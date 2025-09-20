@@ -12,11 +12,14 @@ l= tk.Label(root,  text= 'Enter Patient Name', justify= 'left', anchor= "w")
 l.pack(padx=35, pady=10, anchor='w')
 T.pack()
 
-def click():
+def click(event=None):
     mylabel= tk.Label(root, text=T.get(), justify='left', anchor='w')
-    mylabel.pack(pady= 5, padx= 40, anchor='w')
+    T.delete(0,tk.END)
+    mylabel.pack(pady= 1, padx= 40, anchor='w')
 
 b= tk.Button(root, text='Save', command=click)
 b.pack()
+
+root.bind('<Return>', click)
 
 root.mainloop()
