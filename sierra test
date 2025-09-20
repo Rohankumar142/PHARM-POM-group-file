@@ -5,20 +5,20 @@ root= tk.Tk()
 root.title("Patient Interface")
 root.geometry('500x500')
 
-T= tk.Entry(root, width= 70)
+T= tk.Entry(root, width= 30, justify='left')
 
 l= tk.Label(root,  text= 'Enter Patient Name', justify= 'left', anchor= "w")
 
 l.pack(padx=35, pady=10, anchor='w')
-T.pack()
+T.pack(padx=40, anchor='w')
 
 def click(event=None):
-    mylabel= tk.Label(root, text=T.get(), justify='left', anchor='w')
+    mylabel= tk.Label(root, text=T.get(), justify='left', anchor='w', bg='white', width=70)
     T.delete(0,tk.END)
-    mylabel.pack(pady= 1, padx= 40, anchor='w')
+    mylabel.pack(padx= 40, anchor='w')
 
-b= tk.Button(root, text='Save', command=click)
-b.pack()
+b= tk.Button(root, text='Save', command=click, justify='left')
+b.pack(anchor='w', padx=40)
 
 root.bind('<Return>', click)
 
