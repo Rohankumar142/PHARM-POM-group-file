@@ -8,7 +8,7 @@ entry_data= tk.StringVar()
 entry_box= tk.Entry(root, textvariable=entry_data, width=40, justify="left")
 entry_box.pack(pady=10, anchor="w", padx=10)
 
-def save_data():
+def save_data(event=None):
     data_to_save= text=entry_data.get()
     data_to_save_box= tk.Label(root,text=entry_data.get(), justify='left',bg='white')
     data_to_save_box.pack(anchor='w',padx=10)
@@ -22,5 +22,7 @@ def save_data():
 
 save_button= tk.Button(root, text='Save Data', command=save_data,justify='left')
 save_button.pack(pady=5, anchor='w', padx=10)
+
+root.bind('<Return>', save_data)
 
 root.mainloop()
